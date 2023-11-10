@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Capabilities Registration</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add User Capabilities</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <script>
+        // Check if a success message or warning message is provided from the Django view
+        const successMessage = "{{ success_message }}";
+        const warningMessage = "{{ warning_message }}";
+
+        // Display an alert for a success message
+        if (successMessage) {
+            alert(successMessage);
+        }
+
+        // Display an alert for a warning message
+        if (warningMessage) {
+            alert(warningMessage);
+        }
+    </script>
+</body>
+</html>
